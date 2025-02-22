@@ -1,0 +1,13 @@
+logbook:
+  predicate:
+    include:
+      - path: /api/**
+logging:
+  level:
+    org:
+      zalando:
+        logbook: TRACE
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate

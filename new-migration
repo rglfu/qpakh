@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# Usage:
+#  $ ./new-migration script-name
+# Example:
+#  $ ./new-migration task-1
+
+TIMESTAMP=`date +%Y%m%d%H%M`
+echo -e "--liquibase formatted sql\n--changeset $(git config --global user.email):$TIMESTAMP splitStatements:false" > \
+"src/main/resources/db/changelog/$TIMESTAMP-$1.sql"
+echo -e "  - include:\n      file: db/changelog/$TIMESTAMP-$1.sql" >> \
+src/main/resources/db/changelog/db.changelog-master.yaml

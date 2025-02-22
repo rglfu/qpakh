@@ -1,0 +1,6 @@
+spring:
+  docker:
+    compose:
+      stop:
+        arguments: -v
+        command: down
