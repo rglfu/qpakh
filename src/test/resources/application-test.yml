@@ -6,3 +6,6 @@ spring:
       stop:
         arguments: -v
         command: down
+  kafka:
+    consumer:
+      auto-offset-reset: earliest
