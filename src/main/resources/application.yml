@@ -1,3 +1,8 @@
+app:
+  kafka:
+    task:
+      topic: task
+      group: default
 logbook:
   predicate:
     include:
@@ -8,6 +13,9 @@ logging:
       zalando:
         logbook: TRACE
 spring:
+  kafka:
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
   jpa:
     hibernate:
       ddl-auto: validate
